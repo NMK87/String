@@ -7,20 +7,20 @@ import java.util.Stack;
 public class OuterParentheses {
 
     public static String removeOuterParentheses(String s) {
-        Stack<Character> st = new Stack<>();
+        Stack<Character> st1 = new Stack<>();
         StringBuilder sb = new StringBuilder();
 
         for (int i = 0; i < s.length(); i++) {
             char ch = s.charAt(i);
 
             if (ch == '(') {
-                if (st.size() > 0) {
+                if (st1.size() > 0) {
                     sb.append(ch);
                 }
-                st.push(ch);
+                st1.push(ch);
             } else {
-                st.pop();
-                if (st.size() > 0) {
+                st1.pop();
+                if (st1.size() > 0) {
                     sb.append(ch);
                 }
             }
